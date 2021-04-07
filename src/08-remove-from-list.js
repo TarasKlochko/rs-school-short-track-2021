@@ -18,6 +18,21 @@
  */
 
 function removeKFromList(/* l, k */) {
+  // const list = l;
+  // // const result = [];
+  // function arr(listV) {
+  //   if (listV.value === k) {
+  //     delete listV.value;
+  //     // result.push(list.value);
+  //   }
+  //   if (listV.next) {
+  //     arr(listV.next);
+  //   }
+  // }
+  // arr(list);
+  // console.log(result);
+  // console.log(result.filter((el) => el !== k));
+  // return list;
   throw new Error('Not implemented');
 }
 
