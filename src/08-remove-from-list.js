@@ -17,23 +17,24 @@
  * }
  */
 
-function removeKFromList(/* l, k */) {
-  // const list = l;
-  // // const result = [];
-  // function arr(listV) {
-  //   if (listV.value === k) {
-  //     delete listV.value;
-  //     // result.push(list.value);
-  //   }
-  //   if (listV.next) {
-  //     arr(listV.next);
-  //   }
-  // }
-  // arr(list);
-  // console.log(result);
-  // console.log(result.filter((el) => el !== k));
-  // return list;
-  throw new Error('Not implemented');
+function removeKFromList(l, k) {
+  let list = JSON.parse(JSON.stringify(l));
+  let thisNode = list;
+  let nextNode = thisNode.next;
+
+  while (list.value === k) {
+    list = list.next;
+  }
+
+  while (nextNode !== null) {
+    if (nextNode.value === k) {
+      thisNode.next = nextNode.next;
+      if (thisNode.next === null) break;
+    }
+    thisNode = thisNode.next;
+    nextNode = thisNode.next;
+  }
+  return list;
 }
 
 module.exports = removeKFromList;
